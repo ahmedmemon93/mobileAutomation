@@ -17,6 +17,15 @@
                     <target>17</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/endToEndTestng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -26,56 +35,16 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>io.appium</groupId>-->
-<!--            <artifactId>java-client</artifactId>-->
-<!--            <version>8.0.0</version>-->
-<!--        </dependency>-->
-        <dependency>
-            <groupId>androidx.test.uiautomator</groupId>
-            <artifactId>uiautomator</artifactId>
-            <version>2.2.0-beta02</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>7.6.0</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>mobileAutomation</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/androidx.test.uiautomator/uiautomator -->
-        <!-- https://mvnrepository.com/artifact/androidx.test/core -->
-        <!-- https://mvnrepository.com/artifact/androidx.test/core -->
-        <!-- https://mvnrepository.com/artifact/androidx.test/rules -->
-        <!-- https://mvnrepository.com/artifact/androidx.test/monitor -->
 
     </dependencies>
-
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/endToEndTestng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <systemPropertyVariables>
-                        <propertyName></propertyName>
-                    </systemPropertyVariables>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

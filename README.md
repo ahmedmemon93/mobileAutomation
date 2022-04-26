@@ -39,3 +39,7 @@ Go to parent folder i.e. flink-weathershopper where pom file is there
 ```bash
 mvn clean test
 ```
+
+### Vide link 
+
+![Video](src/test/resources/testCaseToDelete.mov)

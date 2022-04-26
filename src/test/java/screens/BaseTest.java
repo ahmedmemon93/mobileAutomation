@@ -1,7 +1,5 @@
-package screens;/*
-This class is base test to initialize/install apk
-This will handle before and after test and method runs
- */
+package screens;
+
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -19,6 +17,7 @@ import java.net.URL;
 public class BaseTest {
     public static AndroidDriver driver;
     DesiredCapabilities capabilities = new DesiredCapabilities();
+    String device="Pixel3A";
 
     public BaseTest() {
     }
@@ -50,19 +49,15 @@ public class BaseTest {
     @BeforeTest
     public void beforeTest() throws MalformedURLException {
         capabilities.setCapability("BROWSER_NAME", "Android");
-        capabilities.setCapability("avd", "Pixel3A");
+        capabilities.setCapability("avd", device);
         capabilities.setCapability("platformVersion", "5.6");
-        capabilities.setCapability("deviceName", "Pixel3A");
-        capabilities.setCapability("platformName", "Android");//msTodo.apk //reminder.alarm.clock.todo.task-1.0.2.ap
-        //  capabilities.setCapability("app", System.getProperty("user.dir") +"/src/test/resources/msTodo.apk");
-        //capabilities.setCapability("app", System.getProperty("user.dir") +"/src/test/resources/reminder.alarm.clock.todo.task-1.0.2.apk");
-
+        capabilities.setCapability("deviceName", device);
+        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("app", System.getProperty("user.dir") +"/src/test/resources/reminder.alarm.clock.todo.task-1.0.2.apk");
         capabilities.setCapability("autoGrantPermissions", "true");
         capabilities.setCapability("autoAcceptAlerts", "true");
         capabilities.setCapability("ignoreHiddenApiPolicyError", true);
         capabilities.setCapability("fullReset", false);
-//        capabilities.setCapability("appPackage", "com.microsoft.todos");
-//        capabilities.setCapability("appActivity","com.microsoft.todos.onboarding.StartActivity");
         capabilities.setCapability("appPackage", "reminder.alarm.clock.todo.task");
         capabilities.setCapability("appActivity", "meevii.daily.beatles.reminder.activity.SplashActivity");
 
