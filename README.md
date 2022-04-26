@@ -28,7 +28,7 @@ This application is to set different reminders e.g. birthdya, anaversary, custom
 * Make sure Java and Maven is installed on your machine
 * Make sure appium server and AVD are setup
 ```bash
-git clone git@github.com:ahmedmemon93/flink-weathershopper.git
+git clone git@github.com:ahmedmemon93/mobileAutomation.git
 ```
 * After project is cloned make sure you are on **master** branch to get complete code
 * Its maven project so make sure all dependencies are downloaded properly
