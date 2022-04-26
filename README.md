@@ -36,3 +36,6 @@ git clone git@github.com:ahmedmemon93/mobileAutomation.git
 ## Run project: 
 Go to parent folder i.e. flink-weathershopper where pom file is there
 * Run following command
+```bash
+mvn clean test
+```
