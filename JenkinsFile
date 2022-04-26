@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    stages {
+        stage('Compile') {
+            steps {
+                sh 'mvn clean package -DskipTests=true'
+            }
+        }
+//         this stage is just for demostration, as there are not unit tests
+        stage('Unit Tests') {
+            steps {
+                sh 'mvn surefire:test'
+            }
+        }
+         stage('Mobile app Tests') {
+            steps {
+                sh 'mvn clean test -DsuiteXmlFile=src/test/resources/endToEndTestng.xml'
+            }
+        }
+    }
+    post {
+        always {
+            junit 'target/surefire-reports/TEST-*.xml'
+        }
+        failure {
+            mail to: 'ahmedmemon_93@hotmail.com', subject: 'The Pipeline failed :(', body:'The Pipeline failed :('
+        }
+    }
+}

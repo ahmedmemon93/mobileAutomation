@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Reminder mobile app">
+    <test name="End to end test case android test">
+        <classes>
+            <class name="ReminderAppTestScenarios">
+            </class>
+        </classes>
+    </test>
+</suite>
